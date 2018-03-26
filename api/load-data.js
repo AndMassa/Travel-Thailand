@@ -53,47 +53,47 @@ db
     'It is a Buddhist temple (wat) in Bangkok Yai district of Bangkok, Thailand, on the Thonburi west bank of the Chao Phraya River. The temple derives its name from the Hindu god Aruna, often personified as the radiations of the rising sun. Wat Arun is among the best known of Thailands landmarks and the first light of the morning reflects off the surface of the temple with pearly iridescence. Although the temple had existed since at least the seventeenth century, its distinctive prang (spires) were built in the early nineteenth century during the reign of King Rama II.',
   shortDesc: 'A beautiful and well-known temple along the banks of a river.',
   icon: '',
-  options: []
+  options: ['temple', 'explore']
 },
 {
-  _id: '',
-  name: '',
-  shortName: '',
+  _id: 'wat-pho',
+  name: 'Wat Phra Chetuphon Vimolmangklararm Rajwaramahaviharn',
+  shortName: 'Wat Pho',
   desc:
-    '',
-  shortDesc: '',
+    'The temple is first on the list of six temples in Thailand classed as the highest grade of the first-class royal temples. It is associated with King Rama I who rebuilt the temple complex on an earlier temple site, and became his main temple where some of his ashes are enshrined. The temple was later expanded and extensively renovated by Rama III. The temple complex houses the largest collection of Buddha images in Thailand, including a 46 m long reclining Buddha. The temple is considered the earliest centre for public education in Thailand, and the marble illustrations and inscriptions placed in the temple for public instructions has been recognised by UNESCO in its Memory of the World Programme. It houses a school of Thai medicine, and is also known as the birthplace of traditional Thai massage which is still taught and practiced at the temple.',
+  shortDesc: 'Beautiful temple alongside a river with a large statue of the Buddha.',
   icon: '',
-  options: []
+  options: ['temple', 'explore']
 },
 {
-  _id: '',
-  name: '',
-  shortName: '',
+  _id: 'jj-market',
+  name: 'Chatuchak Weekend Market',
+  shortName: 'JJ Market',
   desc:
-    '',
-  shortDesc: '',
-  icon: '',
-  options: []
+    'The Chatuchak Weekend Market (Thai: ตลาดนัดจตุจักร), on Kamphaeng Phet 2 Road, Chatuchak, Bangkok, is the largest market in Thailand. Also known as JJ Market, it has more than 15,000 stalls, divided into 27 sections. Chatuchak Market sells many different kinds of goods, including plants, antiques, consumer electronics, cosmetics, pets, food and drinks, fresh and dry food, ceramics, furniture and home accessories, clothing, and books.',
+  shortDesc: 'Very large open air market with all types of goods.',
+  icon: 'attach_money',
+  options: ['food', 'drink', 'explore', 'shopping']
 },
 {
-  _id: '',
-  name: '',
-  shortName: '',
+  _id: 'patpong',
+  name: 'Patpong Night Market',
+  shortName: 'Patpong',
   desc:
-    '',
-  shortDesc: '',
-  icon: '',
-  options: []
+    'In the evening, this lively market is a great place to shop for souvenirs, fake brand name items and cheap goods and to visit Bangkok’s infamous “adult entertainment area.”',
+  shortDesc: 'A night market with great prices, food and drinks.',
+  icon: 'attach_money',
+  options: ['food', 'drink', 'explore', 'shopping']
 },
 {
-  _id: '',
-  name: '',
-  shortName: '',
+  _id: 'khao-san',
+  name: 'Khao San Road',
+  shortName: 'Khao San',
   desc:
-    '',
-  shortDesc: '',
-  icon: '',
-  options: []
+    'The backpacking district of Khao San Road is the traveler hub of South East Asia. Jam-packed with raucous bars and restaurants as well as budget hostels, it’s a favorite for late-night revelers.',
+  shortDesc: 'A great area filled with locals, backpackers and fun bars.',
+  icon: 'attach_money',
+  options: ['food', 'drink', 'explore', 'shopping']
 },
 {
   _id: '',
