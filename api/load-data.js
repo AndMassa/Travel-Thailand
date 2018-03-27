@@ -53,7 +53,7 @@ db
     'It is a Buddhist temple (wat) in Bangkok Yai district of Bangkok, Thailand, on the Thonburi west bank of the Chao Phraya River. The temple derives its name from the Hindu god Aruna, often personified as the radiations of the rising sun. Wat Arun is among the best known of Thailands landmarks and the first light of the morning reflects off the surface of the temple with pearly iridescence. Although the temple had existed since at least the seventeenth century, its distinctive prang (spires) were built in the early nineteenth century during the reign of King Rama II.',
   shortDesc: 'A beautiful and well-known temple along the banks of a river.',
   icon: '',
-  options: ['temple', 'explore']
+  options: ['temple', 'explore', 'history']
 },
 {
   _id: 'wat-pho',
@@ -63,7 +63,7 @@ db
     'The temple is first on the list of six temples in Thailand classed as the highest grade of the first-class royal temples. It is associated with King Rama I who rebuilt the temple complex on an earlier temple site, and became his main temple where some of his ashes are enshrined. The temple was later expanded and extensively renovated by Rama III. The temple complex houses the largest collection of Buddha images in Thailand, including a 46 m long reclining Buddha. The temple is considered the earliest centre for public education in Thailand, and the marble illustrations and inscriptions placed in the temple for public instructions has been recognised by UNESCO in its Memory of the World Programme. It houses a school of Thai medicine, and is also known as the birthplace of traditional Thai massage which is still taught and practiced at the temple.',
   shortDesc: 'Beautiful temple alongside a river with a large statue of the Buddha.',
   icon: '',
-  options: ['temple', 'explore']
+  options: ['temple', 'explore', 'history']
 },
 {
   _id: 'jj-market',
@@ -96,14 +96,14 @@ db
   options: ['food', 'drink', 'explore', 'shopping']
 },
 {
-  _id: '',
-  name: '',
-  shortName: '',
+  _id: 'jim-thompson',
+  name: 'Jim Thompson House',
+  shortName: 'Jim Thompson House',
   desc:
-    '',
-  shortDesc: '',
-  icon: '',
-  options: []
+    'The Jim Thompson House is a museum in central Bangkok, Thailand, housing the art collection of American businessman and architect Jim Thompson, the museum designer and former owner. Built in 1959, the museum spans one rectangular "rai" of land (approximately half an acre or 2023.43 meters). It is one of the most popular tourist destinations in Thailand; sporting vibrant jungle foliage in the heart of the city.',
+  shortDesc: 'A house previously owned by a very influential silk trader, shrouded in mystery.',
+  icon: 'house',
+  options: ['history', 'explore']
 }
 
   ])
