@@ -15,6 +15,6 @@ app.get('/', (req, res) => {
 })
 
 feedItems(app)
-tips(app)
+// tips(app)
 
 app.listen(PORT, () => console.log ('API up on ', PORT))
