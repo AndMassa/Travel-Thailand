@@ -11,5 +11,13 @@
     "ramda": "^0.25.0",
     "slugify": "^1.2.9",
     "yarn": "^1.5.1"
+    "slugify": "^1.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+>>>>>>> 57ab3757f30a835019bdd39e5be4fccede464813
   }
 }
