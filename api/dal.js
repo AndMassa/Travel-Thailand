@@ -3,7 +3,7 @@ const pkGen = require('./lib/pkGen')
 
 const getFeedItems = options => allDocs(options || { include_docs: true })
 
-const getTips = options => allDocs(option || {include_docs: true})
+const getTips = options => allDocs(options || { include_docs: true })
 
 const getFeedItem = feedItemID => getDoc(feedItemID)
 
