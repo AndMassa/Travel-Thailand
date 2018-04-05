@@ -7,7 +7,7 @@ import appData from './reducers/app-data'
 import thunk from 'redux-thunk'
 
 const store = createStore(
-  combineReducers({ feedItems, appData}),
+  combineReducers({ feedItems, tips, appData}),
   applyMiddleware(thunk)
 )
 

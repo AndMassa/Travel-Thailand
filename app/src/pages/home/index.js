@@ -9,7 +9,8 @@ const Home = props => {
       <h1>{props.home.appName}</h1>
       <ul>
         <li>
-          <Link to="/feeditems">Resources</Link>
+          <Link to="/feeditems">Feed Items</Link>
+          <Link to="/tips">Tips</Link>
         </li>
       </ul>
       <div>

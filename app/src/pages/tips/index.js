@@ -3,15 +3,15 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { map } from 'ramda'
 
-const FeedItems = props => {
+const Tips = props => {
 
   return (
 
     <div>
-      <h1>Feed Items</h1>
+      <h1>Tips</h1>
       <div>
         <ol>
-          {map(f => <li>f.shortName</li>, props.feedItems)}
+          {map(t => <li>t.name</li>, props.tips)}
         </ol>
       </div>
     </div>
@@ -20,11 +20,11 @@ const FeedItems = props => {
 
 const mapSateToProps = state => {
 return{
-  feedItems: state.feedItems
+  tips: state.tips
   }
 
 }
 
 const connector = connect(mapSateToProps)
 
-export default connector(FeedItems)
+export default connector(Tips)

@@ -3,6 +3,8 @@ import './App.css'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 // import Category from './pages/categories/show'
 import Home from './pages/home'
+import FeedItems from './pages/feeditems'
+import Tips from './pages/tips'
 // import Resource from './pages/resources/show'
 // import Resources from './pages/resources'
 // import Categories from './pages/categories'
@@ -19,6 +21,8 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/feeditems" component={FeedItems} />
+            <Route exact path="/tips" component={Tips} />
           </Switch>
         </div>
       </BrowserRouter>
