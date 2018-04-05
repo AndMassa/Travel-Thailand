@@ -4,4 +4,6 @@ export const GET_FEEDITEM = 'GET_FEEDITEM'
 export const SET_TIPS = 'SET_TIPS'
 export const GET_TIP = 'GET_TIP'
 
+export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
+
 export const ERROR = 'ERROR'
