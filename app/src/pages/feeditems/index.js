@@ -1,19 +1,25 @@
 import React from 'react'
 
+import List from 'material-ui/List'
+import FeedItemList from '../../components/FeedItemList'
+
 import {connect} from 'react-redux'
 import { map } from 'ramda'
 
+
+import MenuAppBar from '../../components/MenuAppBar'
+
+
 const FeedItems = props => {
+  const { classes } = props
 
   return (
 
-    <div>
-      <h1>Feed Items</h1>
-      <div>
-        <ol>
-          {map(f => <li>f.shortName</li>, props.feedItems)}
-        </ol>
-      </div>
+    <div style={{ marginTop: '56px'}}>
+      <MenuAppBar title="Feed Items" />
+      <List>
+          {map(f => <FeedItemList feedItem={f}/>, props.feedItems)}
+      </List>
     </div>
   )
 }
