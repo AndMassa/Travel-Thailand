@@ -10,7 +10,7 @@ export const getFeedItems = async (dispatch, getState) => {
   dispatch({type: SET_FEEDITEMS, payload: feedItems})
 }
 
-// export const getFeedItem = async (dispatch, getState) => {
-//   const feedItem = await fetch(`${url}/feeditem/${id}`).then(res => res.json())
-//   dispatch({type: GET_FEEDITEM, payload: feedItem})
-// }
+export const getFeedItem = id => async (dispatch, getState) => {
+  const feedItem = await fetch(`${url}/feeditems/${id}`).then(res => res.json())
+  dispatch({type: GET_FEEDITEM, payload: feedItem})
+}

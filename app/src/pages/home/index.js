@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
-import MenuAppBar from '../../components/MenuAppBar'
-// import Drawer from '../../components/Drawer'
 
 
 const Welcome = () => (
@@ -38,7 +36,6 @@ const Welcome = () => (
 const Home = props => {
   return (
     <div style={{ padding: '60px' }}>
-      <MenuAppBar title="Home" />
       <Welcome />
     </div>
   )
