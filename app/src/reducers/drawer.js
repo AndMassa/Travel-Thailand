@@ -1,8 +1,14 @@
-import {TOGGLE_DRAWER} from '../constants'
+import { TOGGLE_DRAWER } from '../constants'
 
 
 
-function (state, action) {
-
-
+function drawer (state={ open: false }, action) {
+  switch (action.type) {
+    case TOGGLE_DRAWER:
+      return { open: !state.open}
+    default:
+      return state
+  }
 }
+
+export default drawer

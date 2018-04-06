@@ -6,6 +6,8 @@ import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 import SearchIcon from 'material-ui-icons/Search'
 import { withStyles } from 'material-ui/styles'
+import { connect } from 'react-redux'
+import {TOGGLE_DRAWER} from '../constants'
 
 const styles = theme => (
   {
@@ -27,14 +29,16 @@ const styles = theme => (
 )
 
 const MenuAppBar = props => {
-
-  console.log('classes', props.classes)
-  const {classes} = props
+  const {classes, drawerToggleState} = props
   return (
     <div className={classes.root}>
     <AppBar position="fixed">
       <Toolbar>
-        <IconButton className={classes.firstButton} color="contrast" aria-label="Menu" >
+        <IconButton className={classes.firstButton}
+        color="contrast"
+        aria-label="Menu"
+        onClick={props.toggleDrawer}
+        >
           <MenuIcon />
         </IconButton>
 
@@ -50,4 +54,19 @@ const MenuAppBar = props => {
   )
 }
 
-export default withStyles(styles)(MenuAppBar)
+const mapSateToProps = state => {
+
+  return{
+    drawerToggleState: state.drawer
+  }
+}
+
+const mapActionsToProps = (dispatch, getState) => {
+  return{
+    toggleDrawer: () => dispatch({type: TOGGLE_DRAWER})
+  }
+}
+
+const connector = connect(mapSateToProps, mapActionsToProps)
+
+export default connector(withStyles(styles)(MenuAppBar))
