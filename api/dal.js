@@ -9,6 +9,8 @@ const getFeedItem = feedItemID => getDoc(feedItemID)
 
 const getTip = tipID => getDoc(tipID)
 
+const getInterests = options => allDocs(options || {include_docs: true})
+
 const addFeedItem = doc => {
   doc.type = 'feedItem'
   doc._id = pkGen(doc)
@@ -25,7 +27,8 @@ const dal = {
   addFeedItem,
   deleteFeedItem,
   getTips,
-  getTip
+  getTip,
+  getInterests
 }
 
 module.exports = dal

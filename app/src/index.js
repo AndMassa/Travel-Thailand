@@ -7,6 +7,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import { getFeedItems } from './action-creators/feeditems'
 import { getTips } from './action-creators/tips'
+import { getInterests } from './action-creators/interests'
 import 'typeface-roboto'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 import indigo from 'material-ui/colors/indigo'
@@ -35,3 +36,4 @@ registerServiceWorker()
 
 store.dispatch(getFeedItems)
 store.dispatch(getTips)
+//store.dispatch(getInterests)

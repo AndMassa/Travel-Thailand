@@ -3,41 +3,61 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
+import Avatar from 'material-ui/Avatar'
+import classNames from 'classnames'
+import { withStyles } from 'material-ui/styles'
 
+const styles ={
+  row: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  avatar: {
+    margin: 10
+  },
+  bigAvatar: {
+    width: 165,
+    height: 165
+  }
+}
 
 const Welcome = () => (
   <center>
-    <img
-      alt="Travel Thailand"
-      style={{ paddingTop: '16px' }}
-      src="/Thailand-Welcome.png"
-    />
-
-    <Typography style={{ padding: '16px' }} variant="display1">
+    <Typography style={{ padding: '12px' }} variant="display1">
       Welcome to the Travel Companion App!
     </Typography>
-    <div>
-      <Link to="/feeditems" style={{ textDecoration: 'none' }}>
-        <Button variant="raised" color="primary">
-          Destinations
-        </Button>
-      </Link>
-    </div>
-    <div>
-      <Link to="/tips" style={{ textDecoration: 'none' }}>
-        <Button variant="raised" color="primary" style={{ marginTop: '8px' }}>
-          Helpful Tips
-        </Button>
-      </Link>
-    </div>
   </center>
 )
 
+
 const Home = props => {
+  const { classes } = props
   return (
     <div style={{ padding: '60px' }}>
       <Welcome />
-    </div>
+      <center>
+        <Avatar
+        alt="thailand"
+        src="http://www.dreamholidayshub.com/wp-content/uploads/2017/08/thailand-600x600.jpg"
+        className={classNames(classes.avatar, classes.bigAvatar)}
+        />
+      <Typography style={{ padding: '16px' }} variant="display1">
+        Are you ready to travel the world?
+      </Typography>
+      <dim>
+        <Link to="/feeditems" style={{ textDecoration: 'none' }}>
+          <Button
+          variant="raised"
+          color="purple"
+          className={classes.button}
+          >
+            <p />
+            Get Started!
+          </Button>
+        </Link>
+      </dim>
+    </center>
+  </div>
   )
 }
 
@@ -49,4 +69,4 @@ function mapStateToProps(state) {
 
 const connector = connect(mapStateToProps)
 
-export default connector(Home)
+export default connector(withStyles(styles)(Home))
