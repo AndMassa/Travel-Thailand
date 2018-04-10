@@ -45,7 +45,7 @@ const Home = props => {
         Are you ready to travel the world?
       </Typography>
       <dim>
-        <Link to="/feeditems" style={{ textDecoration: 'none' }}>
+        <Link to="/interests" style={{ textDecoration: 'none' }}>
           <Button
           variant="raised"
           color="purple"

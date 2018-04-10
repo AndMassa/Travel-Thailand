@@ -31,7 +31,8 @@ const Interests = props => {
 
   const { classes, interests, handleChange } = props
 
-    console.log("Interests is:", interests)
+    console.log("Interests is:", JSON.stringify(interests))
+    console.log("Tags are: ", interests.tag)
   return (
     <div style={{ padding: '60px' }}>
       <center>
@@ -46,7 +47,7 @@ const Interests = props => {
               <ListItemIcon>
                 <TodayIcon />
               </ListItemIcon>
-              <ListItemText primary="I like everything!" />
+              <ListItemText primary= {i.tag} />
               <Switch checked={i.checked} onChange={handleChange(i.tag)}/>
             </ListItem> , interests )}
 
@@ -63,7 +64,7 @@ const Interests = props => {
           >
 
           <p />
-          Are you ready for your journey to begin?
+          Go Travel!
           </Button>
         </Link>
       </dim>

@@ -3,7 +3,11 @@ import {map, merge} from 'ramda'
 
 const initialState = [
   {tag: 'history', checked: false},
-  {tag: 'shopping', checked: false}
+  {tag: 'shopping', checked: false},
+  {tag: 'explore', checked: false},
+  {tag: 'food', checked: false},
+  {tag: 'drink', checked: false},
+  {tag: 'temple', checked: false}
 ]
 
 export const interests = (state=initialState, action) => {

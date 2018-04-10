@@ -17,6 +17,8 @@ import withDrawer from '../../components/Drawer'
 import AddIcon from 'material-ui-icons/Add'
 import Button from 'material-ui/Button'
 
+import interests from '../interests'
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
