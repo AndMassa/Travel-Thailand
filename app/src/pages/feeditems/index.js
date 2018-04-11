@@ -20,11 +20,15 @@ import { withStyles } from 'material-ui/styles'
 
 import MenuAppBar from '../../components/MenuAppBar'
 import withDrawer from '../../components/Drawer'
+import DestinationItem from '../../components/DestinationItem'
 
 import AddIcon from 'material-ui-icons/Add'
 import Button from 'material-ui/Button'
+import Divider from 'material-ui/Divider'
 
 import Interests from '../interests'
+
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
 
 const styles = theme => ({
   button: {
@@ -71,11 +75,11 @@ if(isEmpty(props.feeditems)) {
 }
   return (
 
-    <div style={{ marginTop: '56px'}}>
-      <MenuAppBar title="Feed Items" />
-      <List>
-        {map(f => <FeedItemList feedItem={f}/>, matches)}
-      </List>
+    <div style={{ marginTop: '59px'}}>
+      <MenuAppBar title="Destinations" />
+      <GridList>
+        {map(f => <DestinationItem feedItem={f}/>, matches)}
+      </GridList>
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import Icon from 'material-ui/Icon'
 import {ListItem, ListItemText} from 'material-ui/List'
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
+import Subheader from 'material-ui/List/ListSubheader'
 import { Link } from 'react-router-dom'
 import Divider from 'material-ui/Divider'
 
@@ -20,10 +22,10 @@ return (
         color: 'black'
       }}
     >
-    <ListItem>
+    <GridList cellHeight={180} className={props.feedItems}>
         <Icon>{icon}</Icon>
       <ListItemText primary={shortName} secondary={shortDesc} />
-    </ListItem>
+    </GridList>
   <Divider />
   </Link>
 </div>
