@@ -6,7 +6,14 @@ import { CircularProgress } from 'material-ui/Progress'
 import FeedItemList from '../../components/FeedItemList'
 
 import {connect} from 'react-redux'
-import { map, isEmpty } from 'ramda'
+import {
+  map,
+  isEmpty,
+  innerJoin,
+  filter,
+  compose,
+  contains
+ } from 'ramda'
 
 import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
@@ -17,7 +24,7 @@ import withDrawer from '../../components/Drawer'
 import AddIcon from 'material-ui-icons/Add'
 import Button from 'material-ui/Button'
 
-import interests from '../interests'
+import Interests from '../interests'
 
 const styles = theme => ({
   button: {
@@ -44,6 +51,12 @@ const styles = theme => ({
 const FeedItems = props => {
   const { classes } = props
 
+  const matches = compose(
+  innerJoin(
+    (feedItem, interest) => contains(interest.tag, feedItem.tags), props.feedItems),
+  filter(i => i.checked))
+(props.interests)
+
 if(isEmpty(props.feeditems)) {
   return (
   <div>
@@ -61,7 +74,7 @@ if(isEmpty(props.feeditems)) {
     <div style={{ marginTop: '56px'}}>
       <MenuAppBar title="Feed Items" />
       <List>
-          {map(f => <FeedItemList feedItem={f}/>, props.feedItems)}
+        {map(f => <FeedItemList feedItem={f}/>, matches)}
       </List>
     </div>
   )
@@ -69,7 +82,8 @@ if(isEmpty(props.feeditems)) {
 
 const mapSateToProps = state => {
 return{
-  feedItems: state.feedItems
+  feedItems: state.feedItems,
+  interests: state.interests
   }
 
 }

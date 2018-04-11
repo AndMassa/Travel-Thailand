@@ -8,4 +8,6 @@ export const CHOOSE_INTERESTS = 'CHOOSE_INTERESTS'
 
 export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
 
+export const MATCHES = 'MATCHES'
+
 export const ERROR = 'ERROR'
