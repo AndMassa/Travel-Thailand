@@ -6,6 +6,7 @@ import Home from './pages/home'
 import FeedItems from './pages/feeditems'
 import Tips from './pages/tips'
 import Interests from './pages/interests'
+import FeedItem from './pages/feeditems/show'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/feeditems" component={FeedItems} />
             <Route exact path="/tips" component={Tips} />
             <Route exact path="/interests" component={Interests} />
+            <Route exact path="/feeditems/:id" component={FeedItem} />
           </Switch>
         </div>
       </BrowserRouter>

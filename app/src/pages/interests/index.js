@@ -14,7 +14,7 @@ import List, {
   ListSubheader
 } from 'material-ui/List'
 import Switch from 'material-ui/Switch'
-import TodayIcon from 'material-ui-icons/Today'
+import Favorite from 'material-ui-icons/Favorite'
 import {map} from 'ramda'
 import {CHOOSE_INTERESTS} from '../../constants'
 
@@ -45,7 +45,7 @@ const Interests = props => {
 
           {map( i => <ListItem>
               <ListItemIcon>
-                <TodayIcon />
+                <Favorite />
               </ListItemIcon>
               <ListItemText primary= {i.tag} />
               <Switch checked={i.checked} onChange={handleChange(i.tag)}/>

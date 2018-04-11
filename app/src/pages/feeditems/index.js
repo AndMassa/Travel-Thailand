@@ -76,15 +76,16 @@ if(isEmpty(props.feeditems)) {
   return (
 
     <div style={{ marginTop: '59px'}}>
-      <MenuAppBar title="Destinations" />
-      <GridList>
-        {map(f => <DestinationItem feedItem={f}/>, matches)}
+      <MenuAppBar title="Destinations" style={{marginLeft: '40%'}}/>
+      <GridList cellHeight={300}>
+        {map(f => <Link to={`/feeditems/${f._id}`}><DestinationItem feedItem={f}/></Link>, matches)}
       </GridList>
     </div>
   )
 }
 
-const mapSateToProps = state => {
+const mapStateToProps = state => {
+  console.log('this is feeditems', state.feedItems)
 return{
   feedItems: state.feedItems,
   interests: state.interests
@@ -92,6 +93,6 @@ return{
 
 }
 
-const connector = connect(mapSateToProps)
+const connector = connect(mapStateToProps)
 
 export default withDrawer(connector(withStyles(styles)(FeedItems)))
