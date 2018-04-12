@@ -1,11 +1,8 @@
 import React from 'react'
-import uuidv4 from 'uuid/v4'
 import { CircularProgress } from 'material-ui/Progress'
 import { connect } from 'react-redux'
 import FeedItemList from '../../components/FeedItemList'
 import MenuAppBar from '../../components/MenuAppBar'
-import TipCard from '../../components/TipCard'
-import AlertDialog from '../../components/TipDialog'
 import {getFeedItem} from '../../action-creators/feeditems'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Button from 'material-ui/Button'
@@ -13,17 +10,7 @@ import Paper from 'material-ui/Paper'
 import {withStyles} from 'material-ui/styles'
 import Typography from 'material-ui/Typography'
 import PropTypes from 'prop-types'
-import {
-  compose,
-  filter,
-  map,
-  innerJoin,
-  contains,
-  head,
-  sortBy,
-  assoc,
-  prop
-  } from 'ramda'
+import { compose, filter, map } from 'ramda'
 import List from 'material-ui/List'
 import Dialog, {
   DialogActions,
@@ -67,35 +54,11 @@ class FeedItem extends React.Component {
 
 
   render() {
-  //  console.log('******PROPS.TIPS ARRAY', JSON.stringify(this.props.tips))
-  //  console.log('*******FEEDITEM', JSON.stringify(this.props.feedItem))
-    //console.log('********ITERESTS', JSON.stringify(this.props.interests))
-
-
-
-
-        const matchTips = compose(
-          innerJoin(
-            (tip, interest) => contains(interest.tag, tip.tags),
-            this.props.tips
-          ),
-          filter(i => i.checked)
-        )(this.props.interests)
-
-        console.log('match tips', matchTips)
-
-
-    const tipOfTheDay =
-      compose(
-        head,
-        sortBy(prop('randomID')),
-        map( t => assoc('randomID', uuidv4(), t))
-      )(matchTips)
-
-    console.log('tipOfTheDay', tipOfTheDay)
-
+    console.log('PROPS.TIPS ARRAY', JSON.stringify(this.props.tips))
+    console.log('FEEDITEM', JSON.stringify(this.props.tip))
+    console.log('INTERESTS', JSON.stringify(this.props.interests))
     const { classes } = this.props
-    if (this.props.feedItem._id !== this.props.match.params.id) {
+    if (this.props.tip._id !== this.props.match.params.id) {
       return (
         <div>
           <MenuAppBar {...this.props} showBackArrow={true} title="Destination" />
@@ -113,21 +76,18 @@ class FeedItem extends React.Component {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={this.props.feedItem.img}
-          title={this.props.feedItem.name}
+          image={this.props.tip.img}
+          title={this.props.tip.name}
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
-            {this.props.feedItem.name}
+            {this.props.tip.name}
           </Typography>
           <Typography component="p">
-            {this.props.feedItem.desc}
+            {this.props.tip.desc}
           </Typography>
         </CardContent>
       </Card>
-      <AlertDialog tip={tipOfTheDay}/>
-
-
     </div>
   );
   }
@@ -137,9 +97,9 @@ class FeedItem extends React.Component {
 //           <MenuAppBar {...this.props} showBackArrow={true} title="Destination" />
 //           <Card>
 //           <Paper className={classes.root} elevation={1}>
-//             <FeedItemList feedItem={this.props.feedItem} />
+//             <FeedItemList tip={this.props.tip} />
 //             <Typography style={{ paddingTop: '8px' }} component="p">
-//               {this.props.feedItem.desc}
+//               {this.props.tip.desc}
 //             </Typography>
 //           </Paper>
 //           </Card>
@@ -149,9 +109,7 @@ class FeedItem extends React.Component {
 // }
 
 const mapStateToProps = state => {
-  console.log('what is state', state)
   return {
-    feedItem: state.feedItem,
     tips: state.tips,
     interests: state.interests
   }

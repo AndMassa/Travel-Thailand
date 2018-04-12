@@ -1,7 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import {
-  SET_TIPS,
-  GET_TIP
+  SET_TIPS
 } from '../constants'
 const url = 'http://localhost:5000'
 

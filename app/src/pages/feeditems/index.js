@@ -91,7 +91,8 @@ const mapStateToProps = state => {
   console.log('this is feeditems', state.feedItems)
 return{
   feedItems: state.feedItems,
-  interests: state.interests
+  interests: state.interests,
+  tips: state.tips
   }
 
 }

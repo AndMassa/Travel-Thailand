@@ -31,15 +31,13 @@ const Interests = props => {
 
   const { classes, interests, handleChange } = props
 
-    console.log("Interests is:", JSON.stringify(interests))
-    console.log("Tags are: ", interests.tag)
   return (
-    <div style={{ padding: '260px' }}>
+    <div style={{ padding: '20%'}}>
       <center>
         <div>
           <List
             subheader={
-              <ListSubheader>What do you like to do? </ListSubheader>
+              <ListSubheader>What interests you? </ListSubheader>
             }
           >
 
