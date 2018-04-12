@@ -1,13 +1,19 @@
 import React from 'react'
 
+import {
+  compose,
+  innerJoin,
+  contains,
+  filter,
+  isEmpty
+} from 'ramda'
+
 import List from 'material-ui/List'
 import { CircularProgress } from 'material-ui/Progress'
 
 import FeedItemList from '../../components/FeedItemList'
 
 import {connect} from 'react-redux'
-import { map, isEmpty } from 'ramda'
-
 import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 
@@ -17,7 +23,7 @@ import withDrawer from '../../components/Drawer'
 import AddIcon from 'material-ui-icons/Add'
 import Button from 'material-ui/Button'
 
-import interests from '../interests'
+import Interests from '../interests'
 
 const styles = theme => ({
   button: {
@@ -41,6 +47,8 @@ const styles = theme => ({
   }
 })
 
+console.log('Interests in feeditems: ', Interests)
+
 const FeedItems = props => {
   const { classes } = props
 
@@ -61,7 +69,13 @@ if(isEmpty(props.feeditems)) {
     <div style={{ marginTop: '56px'}}>
       <MenuAppBar title="Feed Items" />
       <List>
-          {map(f => <FeedItemList feedItem={f}/>, props.feedItems)}
+          {compose(
+  innerJoin(
+    (feedItem, interest) => contains(interest.tag, feedItem.tags),
+    FeedItems
+   ),
+   filter(i => i.checked === true)
+)(Interests)}
       </List>
     </div>
   )
