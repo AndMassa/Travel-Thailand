@@ -5,7 +5,7 @@ import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 import store from './store'
 import { Provider } from 'react-redux'
-import { getFeedItems } from './action-creators/feeditems'
+import { getFeedItems, getFeedItem } from './action-creators/feeditems'
 import { getTips } from './action-creators/tips'
 import { getInterests } from './action-creators/interests'
 import 'typeface-roboto'
@@ -36,4 +36,4 @@ registerServiceWorker()
 
 store.dispatch(getFeedItems)
 store.dispatch(getTips)
-//store.dispatch(getInterests)
+store.dispatch(getFeedItem)

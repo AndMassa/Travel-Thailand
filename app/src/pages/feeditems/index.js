@@ -14,16 +14,35 @@ import { CircularProgress } from 'material-ui/Progress'
 import FeedItemList from '../../components/FeedItemList'
 
 import {connect} from 'react-redux'
+<<<<<<< HEAD
+=======
+import {
+  map,
+  isEmpty,
+  innerJoin,
+  filter,
+  compose,
+  contains
+ } from 'ramda'
+
+>>>>>>> bd169e61ab29f9aaf687e71cfc7098eabd226416
 import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 
 import MenuAppBar from '../../components/MenuAppBar'
 import withDrawer from '../../components/Drawer'
+import DestinationItem from '../../components/DestinationItem'
 
 import AddIcon from 'material-ui-icons/Add'
 import Button from 'material-ui/Button'
+import Divider from 'material-ui/Divider'
 
 import Interests from '../interests'
+<<<<<<< HEAD
+=======
+
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
+>>>>>>> bd169e61ab29f9aaf687e71cfc7098eabd226416
 
 const styles = theme => ({
   button: {
@@ -52,6 +71,12 @@ console.log('Interests in feeditems: ', Interests)
 const FeedItems = props => {
   const { classes } = props
 
+  const matches = compose(
+  innerJoin(
+    (feedItem, interest) => contains(interest.tag, feedItem.tags), props.feedItems),
+  filter(i => i.checked))
+(props.interests)
+
 if(isEmpty(props.feeditems)) {
   return (
   <div>
@@ -66,6 +91,7 @@ if(isEmpty(props.feeditems)) {
 }
   return (
 
+<<<<<<< HEAD
     <div style={{ marginTop: '56px'}}>
       <MenuAppBar title="Feed Items" />
       <List>
@@ -77,17 +103,26 @@ if(isEmpty(props.feeditems)) {
    filter(i => i.checked === true)
 )(Interests)}
       </List>
+=======
+    <div style={{ marginTop: '59px'}}>
+      <MenuAppBar title="Destinations" style={{marginLeft: '40%'}}/>
+      <GridList cellHeight={300}>
+        {map(f => <Link to={`/feeditems/${f._id}`}><DestinationItem feedItem={f}/></Link>, matches)}
+      </GridList>
+>>>>>>> bd169e61ab29f9aaf687e71cfc7098eabd226416
     </div>
   )
 }
 
-const mapSateToProps = state => {
+const mapStateToProps = state => {
+  console.log('this is feeditems', state.feedItems)
 return{
-  feedItems: state.feedItems
+  feedItems: state.feedItems,
+  interests: state.interests
   }
 
 }
 
-const connector = connect(mapSateToProps)
+const connector = connect(mapStateToProps)
 
 export default withDrawer(connector(withStyles(styles)(FeedItems)))
