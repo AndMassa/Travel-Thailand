@@ -6,6 +6,7 @@ import Typography from 'material-ui/Typography'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import Button from 'material-ui/Button'
+import MenuAppBar from '../../components/MenuAppBar'
 import List, {
   ListItem,
   ListItemIcon,
@@ -33,6 +34,9 @@ const Interests = props => {
 
   return (
     <div style={{ padding: '20%'}}>
+    <center>
+    <MenuAppBar title="Interests"/>
+    </center>
       <center>
         <div>
           <List

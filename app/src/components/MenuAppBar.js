@@ -5,6 +5,8 @@ import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 import SearchIcon from 'material-ui-icons/Search'
+import GoBackIcon from 'material-ui-icons/KeyboardArrowLeft'
+import {Link} from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 import { connect } from 'react-redux'
 import {TOGGLE_DRAWER} from '../constants'
@@ -39,15 +41,12 @@ const MenuAppBar = props => {
         aria-label="Menu"
         onClick={props.toggleDrawer}
         >
-          <MenuIcon />
+          <Link to="/"><GoBackIcon style={{color: 'white'}}/></Link>
         </IconButton>
 
       <Typography className={classes.flex} variant="title" color="inherit">
         {props.title}
       </Typography>
-      <IconButton className={classes.lastButton} color="contrast" aria-label="Search">
-        <SearchIcon />
-      </IconButton>
       </Toolbar>
     </AppBar>
     </div>
