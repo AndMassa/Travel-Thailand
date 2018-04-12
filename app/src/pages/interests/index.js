@@ -34,7 +34,7 @@ const Interests = props => {
     console.log("Interests is:", JSON.stringify(interests))
     console.log("Tags are: ", interests.tag)
   return (
-    <div style={{ padding: '60px' }}>
+    <div style={{ padding: '260px' }}>
       <center>
         <div>
           <List

@@ -5,7 +5,8 @@ import {
   innerJoin,
   contains,
   filter,
-  isEmpty
+  isEmpty,
+  map
 } from 'ramda'
 
 import List from 'material-ui/List'
@@ -14,18 +15,7 @@ import { CircularProgress } from 'material-ui/Progress'
 import FeedItemList from '../../components/FeedItemList'
 
 import {connect} from 'react-redux'
-<<<<<<< HEAD
-=======
-import {
-  map,
-  isEmpty,
-  innerJoin,
-  filter,
-  compose,
-  contains
- } from 'ramda'
 
->>>>>>> bd169e61ab29f9aaf687e71cfc7098eabd226416
 import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 
@@ -38,11 +28,8 @@ import Button from 'material-ui/Button'
 import Divider from 'material-ui/Divider'
 
 import Interests from '../interests'
-<<<<<<< HEAD
-=======
 
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
->>>>>>> bd169e61ab29f9aaf687e71cfc7098eabd226416
 
 const styles = theme => ({
   button: {
@@ -91,25 +78,11 @@ if(isEmpty(props.feeditems)) {
 }
   return (
 
-<<<<<<< HEAD
-    <div style={{ marginTop: '56px'}}>
-      <MenuAppBar title="Feed Items" />
-      <List>
-          {compose(
-  innerJoin(
-    (feedItem, interest) => contains(interest.tag, feedItem.tags),
-    FeedItems
-   ),
-   filter(i => i.checked === true)
-)(Interests)}
-      </List>
-=======
     <div style={{ marginTop: '59px'}}>
       <MenuAppBar title="Destinations" style={{marginLeft: '40%'}}/>
       <GridList cellHeight={300}>
         {map(f => <Link to={`/feeditems/${f._id}`}><DestinationItem feedItem={f}/></Link>, matches)}
       </GridList>
->>>>>>> bd169e61ab29f9aaf687e71cfc7098eabd226416
     </div>
   )
 }

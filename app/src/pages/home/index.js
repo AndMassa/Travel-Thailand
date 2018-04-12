@@ -18,6 +18,10 @@ const styles ={
   bigAvatar: {
     width: 165,
     height: 165
+  },
+  smallAvatar: {
+    width: 100,
+    height: 100
   }
 }
 
@@ -35,12 +39,24 @@ const Home = props => {
   return (
     <div style={{ padding: '60px' }}>
       <Welcome />
-      <center>
+      <div className ={classes.row}>
         <Avatar
         alt="thailand"
         src="http://www.dreamholidayshub.com/wp-content/uploads/2017/08/thailand-600x600.jpg"
+        className={classNames(classes.avatar, classes.smallAvatar)}
+        />
+        <Avatar
+        alt="travel-thailand"
+        src="https://travelcoupon.online/wp-content/uploads/2016/04/thailand.jpg"
         className={classNames(classes.avatar, classes.bigAvatar)}
         />
+        <Avatar
+        alt="travel-thailand"
+        src="https://images.into-asia.com/w700/travelling-in-thailand-faq-thailand-getting-around-215.jpg"
+        className={classNames(classes.avatar, classes.smallAvatar)}
+        />
+        </div>
+        <center>
       <Typography style={{ padding: '16px' }} variant="display1">
         Are you ready to travel the world?
       </Typography>
@@ -52,7 +68,7 @@ const Home = props => {
           className={classes.button}
           >
             <p />
-            Get Started!
+            Travel!
           </Button>
         </Link>
       </dim>
