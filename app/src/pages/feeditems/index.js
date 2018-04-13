@@ -9,10 +9,7 @@ import {
   map
 } from 'ramda'
 
-import List from 'material-ui/List'
 import { CircularProgress } from 'material-ui/Progress'
-
-import FeedItemList from '../../components/FeedItemList'
 
 import {connect} from 'react-redux'
 
@@ -23,13 +20,9 @@ import MenuAppBar from '../../components/MenuAppBar'
 import withDrawer from '../../components/Drawer'
 import DestinationItem from '../../components/DestinationItem'
 
-import AddIcon from 'material-ui-icons/Add'
-import Button from 'material-ui/Button'
-import Divider from 'material-ui/Divider'
-
 import Interests from '../interests'
 
-import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
+import GridList from 'material-ui/GridList'
 
 const styles = theme => ({
   button: {

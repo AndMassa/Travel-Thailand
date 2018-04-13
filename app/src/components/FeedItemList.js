@@ -1,13 +1,9 @@
 import React from 'react'
 import Icon from 'material-ui/Icon'
-import {ListItem, ListItemText} from 'material-ui/List'
-import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
-import Subheader from 'material-ui/List/ListSubheader'
+import {ListItemText} from 'material-ui/List'
+import GridList from 'material-ui/GridList'
 import { Link } from 'react-router-dom'
 import Divider from 'material-ui/Divider'
-
-
-
 
 
 const FeedItemList = props => {

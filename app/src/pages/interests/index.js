@@ -1,16 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import { connect } from 'react-redux'
-import Typography from 'material-ui/Typography'
-import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import Button from 'material-ui/Button'
 import MenuAppBar from '../../components/MenuAppBar'
 import List, {
   ListItem,
   ListItemIcon,
-  ListItemSecondaryAction,
   ListItemText,
   ListSubheader
 } from 'material-ui/List'

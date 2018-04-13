@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from 'material-ui/Icon'
 import { withStyles } from 'material-ui/styles';
 import { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
@@ -24,12 +23,12 @@ const styles = theme => ({
 
 const DestinationItem = (props) => {
 
-  const {classes, img, shortName, shortDesc, icon } = props.feedItem
+  const { img, shortName, shortDesc, icon } = props.feedItem
 
   return (
 
     <GridListTile key={img} style={{height: '105%', width: '200%'}}>
-           <img src={img} />
+           <img src={img} alt={'Something beautiful!'}/>
            <GridListTileBar
              title={shortName}
              subtitle={shortDesc}

@@ -1,11 +1,8 @@
 import React from 'react'
 import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List'
-import ViewList from 'material-ui-icons/ViewList'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import InboxIcon from 'material-ui-icons/Inbox'
 import HomeIcon from 'material-ui-icons/Home'
-import HelpIcon from 'material-ui-icons/Help'
 import Divider from 'material-ui/Divider'
 import {TOGGLE_DRAWER} from '../constants'
 

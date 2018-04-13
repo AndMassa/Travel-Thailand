@@ -2,17 +2,12 @@ import React from 'react'
 import uuidv4 from 'uuid/v4'
 import { CircularProgress } from 'material-ui/Progress'
 import { connect } from 'react-redux'
-import FeedItemList from '../../components/FeedItemList'
 import MenuAppBar from '../../components/MenuAppBar'
-import TipCard from '../../components/TipCard'
 import AlertDialog from '../../components/TipDialog'
 import {getFeedItem} from '../../action-creators/feeditems'
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
-import Button from 'material-ui/Button'
-import Paper from 'material-ui/Paper'
+import Card, { CardContent, CardMedia } from 'material-ui/Card'
 import {withStyles} from 'material-ui/styles'
 import Typography from 'material-ui/Typography'
-import PropTypes from 'prop-types'
 import {
   compose,
   filter,
@@ -24,13 +19,6 @@ import {
   assoc,
   prop
   } from 'ramda'
-import List from 'material-ui/List'
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle
-} from 'material-ui/Dialog'
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -67,12 +55,6 @@ class FeedItem extends React.Component {
 
 
   render() {
-  //  console.log('******PROPS.TIPS ARRAY', JSON.stringify(this.props.tips))
-  //  console.log('*******FEEDITEM', JSON.stringify(this.props.feedItem))
-    //console.log('********ITERESTS', JSON.stringify(this.props.interests))
-
-
-
 
         const matchTips = compose(
           innerJoin(
@@ -98,7 +80,7 @@ class FeedItem extends React.Component {
     if (this.props.feedItem._id !== this.props.match.params.id) {
       return (
         <div>
-          <MenuAppBar {...this.props} showBackArrow={true} title="Destination" />
+          <center><MenuAppBar {...this.props} showBackArrow={true} title="Destination" /></center>
           <div className={classes.loading}>
             {' '}
             <h1 className="animated infinite swing">Loading</h1>

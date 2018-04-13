@@ -3,8 +3,6 @@ import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui-icons/Menu'
-import SearchIcon from 'material-ui-icons/Search'
 import GoBackIcon from 'material-ui-icons/KeyboardArrowLeft'
 import {Link} from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
@@ -56,7 +54,7 @@ const MenuAppBar = props => {
 const mapSateToProps = state => {
 
   return{
-    drawerToggleState: state.drawer
+    state
   }
 }
 
