@@ -20,6 +20,7 @@ const styles = theme => (
     firstButton: {
       marginLeft: -12,
       marginRight: 12,
+      color: 'white'
     },
     lastButton: {
       marginLeft: 12,
@@ -29,41 +30,32 @@ const styles = theme => (
 )
 
 const MenuAppBar = props => {
-  const {classes, drawerToggleState} = props
+  const {classes} = props
   return (
     <div className={classes.root}>
     <AppBar position="fixed">
-      <Toolbar>
-        <IconButton className={classes.firstButton}
-        color="contrast"
-        aria-label="Menu"
-        onClick={props.toggleDrawer}
-        >
-          <Link to="/"><GoBackIcon style={{color: 'white'}}/></Link>
+    <Toolbar>
+    <IconButton
+          className={classes.firstButton}
+          aria-label="Menu"
+          onClick={() =>
+            props.goBack(props.history)
+          }
+        ><GoBackIcon />
         </IconButton>
-
-      <Typography className={classes.flex} variant="title" color="inherit">
         {props.title}
-      </Typography>
-      </Toolbar>
-    </AppBar>
-    </div>
+        </Toolbar>
+        </AppBar>
+        </div>
   )
 }
 
-const mapSateToProps = state => {
-
+const mapActionsToProps = (dispatch) => {
   return{
-    state
+    goBack: (history) => history.goBack()
   }
 }
 
-const mapActionsToProps = (dispatch, getState) => {
-  return{
-    toggleDrawer: () => dispatch({type: TOGGLE_DRAWER})
-  }
-}
-
-const connector = connect(mapSateToProps, mapActionsToProps)
+const connector = connect(mapActionsToProps)
 
 export default connector(withStyles(styles)(MenuAppBar))
