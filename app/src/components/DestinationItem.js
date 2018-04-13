@@ -38,7 +38,8 @@ const DestinationItem = (props) => {
                </IconButton>
              }
            />
-         </GridListTile>
+      </GridListTile>
+
   )
 }
 

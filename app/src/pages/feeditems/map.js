@@ -8,7 +8,6 @@ import {getFeedItem} from '../../action-creators/feeditems'
 import Card, { CardContent, CardMedia } from 'material-ui/Card'
 import {withStyles} from 'material-ui/styles'
 import Typography from 'material-ui/Typography'
-import { Link } from 'react-router-dom'
 import {
   compose,
   filter,
@@ -48,7 +47,7 @@ const styles = theme => ({
   }
 })
 
-class FeedItem extends React.Component {
+class FeedItemMap extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id
     this.props.getFeedItem(id)
@@ -57,30 +56,11 @@ class FeedItem extends React.Component {
 
   render() {
 
-        const matchTips = compose(
-          innerJoin(
-            (tip, interest) => contains(interest.tag, tip.tags),
-            this.props.tips
-          ),
-          filter(i => i.checked)
-        )(this.props.interests)
-
-        console.log('match tips', matchTips)
-
-
-    const tipOfTheDay =
-      compose(
-        head,
-        sortBy(prop('randomID')),
-        map( t => assoc('randomID', uuidv4(), t))
-      )(matchTips)
-
-    console.log('tipOfTheDay', tipOfTheDay)
-
-    const { classes } = this.props
+    const { classes, name } = this.props
     if (this.props.feedItem._id !== this.props.match.params.id) {
       return (
         <div>
+          <center><MenuAppBar {...this.props} showBackArrow={true} title="Map" /></center>
           <div className={classes.loading}>
             {' '}
             <h1 className="animated infinite swing">Loading</h1>
@@ -90,31 +70,30 @@ class FeedItem extends React.Component {
       )
     }
 
+
     return (
-    <div className={classes.fullScreen}>
-    <MenuAppBar {...this.props} title="Destination" />
-      <Link to={`/feeditems/${this.props.feedItem._id}/map`} style ={{textDecoration: "none", color: "black"}}><Card className={classes.card}>
-        <CardMedia
-          className={classes.media}
-          image={this.props.feedItem.img}
-          title={this.props.feedItem.name}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
-            {this.props.feedItem.name}
-          </Typography>
-          <Typography component="p">
-            {this.props.feedItem.desc}
-          </Typography>
-        </CardContent>
-      </Card></Link>
-      <AlertDialog tip={tipOfTheDay}/>
-
-
+      <div>
+      <MenuAppBar {...this.props} title="Map" />
+        <Card className={classes.card} style={{ marginBottom: 32 }}>
+          <CardMedia className={classes.media}>
+            <iframe
+              title={this.props.feedItem.name}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0 }}
+              src={`https://www.google.com/maps/embed/v1/place?key=
+                AIzaSyDKun7eUBroAQcMt_FnhzZYGIvO8HFUbLw
+              &q=${encodeURI(this.props.feedItem.name)}`}
+              allowFullScreen
+            />
+          </CardMedia>
+          </Card>
     </div>
-  );
-  }
+  )
 }
+}
+
 //     return (
 //         <div>
 //           <MenuAppBar {...this.props} showBackArrow={true} title="Destination" />
@@ -148,4 +127,4 @@ const mapActionsToProps = dispatch => {
 
 const connector = connect(mapStateToProps, mapActionsToProps)
 
-export default connector(withStyles(styles)(FeedItem))
+export default connector(withStyles(styles)(FeedItemMap))

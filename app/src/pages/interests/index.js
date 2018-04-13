@@ -31,7 +31,7 @@ const Interests = props => {
   return (
     <div style={{ padding: '20%'}}>
     <center>
-    <MenuAppBar title="Interests"/>
+    <MenuAppBar title="Interests" {...props}/>
     </center>
       <center>
         <div>

@@ -60,7 +60,6 @@ const FeedItems = props => {
 if(isEmpty(props.feeditems)) {
   return (
   <div>
-    <MenuAppBar title="Destinations" />
     <div className={classes.loading}>
       {' '}
       <h1 className="animated infinite swing">Loading</h1>
@@ -72,7 +71,7 @@ if(isEmpty(props.feeditems)) {
   return (
 
     <div style={{ marginTop: '59px'}}>
-      <MenuAppBar title="Destinations" style={{marginLeft: '40%'}}/>
+        <MenuAppBar {...props} title="Destinations" />
       <GridList cellHeight={300}>
         {map(f => <Link to={`/feeditems/${f._id}`}><DestinationItem feedItem={f}/></Link>, matches)}
       </GridList>
